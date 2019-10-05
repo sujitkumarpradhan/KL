@@ -39,6 +39,7 @@ const GET_AllEntry = gql`
         landingPage1Url
         landingPage2Url
         landingPage3Url
+        managersStatus
       }
     }
   }
@@ -46,24 +47,25 @@ const GET_AllEntry = gql`
 
 const cookies = new Cookies();
 
-class allEntries extends React.Component {
+class reviewAllEntries extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       frequency: "Q4",
-      check: false
+      underReview: false
     };
     this.sendToReview = this.sendToReview.bind(this);
   }
 
   sendToReview(alias, id) {
     console.log(id);
-    this.props.history.push("/entry/" + alias + "/" + id);
+    this.props.history.push("/review/" + alias + "/" + id);
   }
 
   frequencyChange(quater) {
     this.setState({
-      frequency: quater
+      frequency: quater,
+      underReview: false
     });
   }
 
@@ -112,7 +114,7 @@ class allEntries extends React.Component {
                           }}
                           className="viewPageTitleMonth"
                         >
-                          QUARTER 1 WINNERS
+                          QUARTER 1 REVIEW
                         </div>
 
                         <div
@@ -122,7 +124,7 @@ class allEntries extends React.Component {
                           }}
                           className="viewPageTitleMonth"
                         >
-                          QUARTER 2 WINNERS
+                          QUARTER 2 REVIEW
                         </div>
 
                         <div
@@ -132,7 +134,7 @@ class allEntries extends React.Component {
                           }}
                           className="viewPageTitleMonth"
                         >
-                          QUATER 3 WINNERS
+                          QUATER 3 REVIEW
                         </div>
 
                         <div
@@ -142,7 +144,7 @@ class allEntries extends React.Component {
                           }}
                           className="viewPageTitleMonth"
                         >
-                          QUARTER 4 WINNERS
+                          QUARTER 4 REVIEW
                         </div>
                       </Col>
 
@@ -226,17 +228,33 @@ class allEntries extends React.Component {
                     </Row>
                   </Col>
 
+                  <Col
+                    xs={12}
+                    md={12}
+                    // style={{
+                    //   display: this.state.underReview ? "block" : "none"
+                    // }}
+                  >
+                    <Row className="show-grid">
+                      <div className="reviwerTitle">UNDER REVIEW</div>
+                    </Row>
+                  </Col>
+
                   <Col xs={12} md={12}>
                     <Row className="show-grid">
+                   
                       {data.listEntries.items
                         .filter(entry => {
-                          if (this.state.frequency === entry.Quater) {
+                          if (
+                            this.state.frequency === entry.Quater &&
+                            entry.managersStatus == "10"
+                          ) {
                             return true;
                           } else {
                             false;
                           }
-                        })
-                        .map(entry => {
+                        }) 
+                      .map(entry => {
                           return (
                             <Col
                               style={{
@@ -270,6 +288,7 @@ class allEntries extends React.Component {
                                   </a>
                                 </div>
                               </div>
+
                               <Col
                                 className=""
                                 onClick={() =>
@@ -282,8 +301,8 @@ class allEntries extends React.Component {
                                 md={12}
                               >
                                 <Col
-                                  xs={9}
-                                  md={9}
+                                  xs={12}
+                                  md={12}
                                   className="placementType"
                                   onClick={() =>
                                     this.sendToReview(
@@ -294,10 +313,87 @@ class allEntries extends React.Component {
                                 >
                                   {entry.advertiser} | {entry.placement}
                                 </Col>
+                              </Col>
+                            </Col>
+                          );
+                        })}
+                    </Row>
+                  </Col>
+
+                  <Col xs={12} md={12}>
+                    <Row className="show-grid">
+                      <div className="reviwerTitle">REVIEWED</div>
+                    </Row>
+                  </Col>
+
+                  <Col xs={12} md={12}>
+                    <Row className="show-grid">
+                      {data.listEntries.items
+                        .filter(entry => {
+                          if (
+                            this.state.frequency === entry.Quater &&
+                            (entry.managersStatus == "100" ||
+                              entry.managersStatus == "0")
+                          ) {
+                            return true;
+                          } else {
+                            false;
+                          }
+                        })
+                        .map(entry => {
+                          return (
+                            <Col
+                              style={{
+                                display: entry.Visible ? "block" : "none",
+                                filter:
+                                  entry.managersStatus == "0"
+                                    ? "grayscale(100%)"
+                                    : "none"
+                              }}
+                              xs={4}
+                              md={4}
+                              className="viewMargin"
+                              key={entry.EntryId}
+                            >
+                              <div
+                                className="entryBlock"
+                                onClick={() =>
+                                  this.sendToReview(
+                                    this.props.match.params.userAlias,
+                                    entry.EntryId
+                                  )
+                                }
+                              >
+                                <div>
+                                  <div className="winnersNameBlock">
+                                    <span className="winnersName lineHover">
+                                      {entry.DesignerName}
+                                      <span className="winnerSite">
+                                        ({entry.Site})
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <a className="imageView">
+                                    <img src={entry.ThumbnailURL} />
+                                  </a>
+                                </div>
+                              </div>
+
+                              <Col
+                                className=""
+                                onClick={() =>
+                                  this.sendToReview(
+                                    this.props.match.params.userAlias,
+                                    entry.EntryId
+                                  )
+                                }
+                                xs={12}
+                                md={12}
+                              >
                                 <Col
-                                  xs={2}
-                                  md={2}
-                                  className="points"
+                                  xs={12}
+                                  md={12}
+                                  className="placementType"
                                   onClick={() =>
                                     this.sendToReview(
                                       this.props.match.params.userAlias,
@@ -305,9 +401,7 @@ class allEntries extends React.Component {
                                     )
                                   }
                                 >
-                                  {" "}
-                                  <span>{entry.Likes}</span>
-                                  <img src={AmazonLogo} />
+                                  {entry.advertiser} | {entry.placement}
                                 </Col>
                               </Col>
                             </Col>
@@ -315,83 +409,6 @@ class allEntries extends React.Component {
                         })}
                     </Row>
                   </Col>
-                  {/* <Col xs={12} md={12} className="viewPageBottomQuater">
-                    <div className="">
-                      <img src={lineHoz} />
-                      {this.state.frequency == "Q1" ? (
-                        <span>
-                          <img
-                            src={plusActive}
-                            onClick={() => this.frequencyChange("Q1")}
-                          />
-                          Q1
-                        </span>
-                      ) : (
-                        <span>
-                          <img
-                            src={plus}
-                            onClick={() => this.frequencyChange("Q1")}
-                          />
-                          Q1
-                        </span>
-                      )}
-                      <img src={lineHoz} />
-                      {this.state.frequency == "Q2" ? (
-                        <span>
-                          <img
-                            src={plusActive}
-                            onClick={() => this.frequencyChange("Q2")}
-                          />
-                          Q2
-                        </span>
-                      ) : (
-                        <span>
-                          <img
-                            src={plus}
-                            onClick={() => this.frequencyChange("Q2")}
-                          />
-                          Q2
-                        </span>
-                      )}
-                      <img src={lineHoz} />
-                      {this.state.frequency == "Q3" ? (
-                        <span>
-                          <img
-                            src={plusActive}
-                            onClick={() => this.frequencyChange("Q3")}
-                          />
-                          Q3
-                        </span>
-                      ) : (
-                        <span>
-                          <img
-                            src={plus}
-                            onClick={() => this.frequencyChange("Q3")}
-                          />
-                          Q3
-                        </span>
-                      )}
-                      <img src={lineHoz} />
-                      {this.state.frequency == "Q4" ? (
-                        <span>
-                          <img
-                            src={plusActive}
-                            onClick={() => this.frequencyChange("Q4")}
-                          />
-                          Q4
-                        </span>
-                      ) : (
-                        <span>
-                          <img
-                            src={plus}
-                            onClick={() => this.frequencyChange("Q4")}
-                          />
-                          Q4
-                        </span>
-                      )}
-                      <img src={lineHoz} />
-                    </div>
-                  </Col> */}
                 </Row>
               </Grid>
             );
@@ -401,4 +418,4 @@ class allEntries extends React.Component {
     );
   }
 }
-export default withRouter(allEntries);
+export default withRouter(reviewAllEntries);

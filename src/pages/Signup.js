@@ -8,7 +8,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { BrowserRouter } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import Footer from "../components/footer";
-import SignupView from "../components/loginView";
+import SignupView from "../components/signupView";
 
 import "../style/global.css";
 import Header from '../components/header';
@@ -17,7 +17,7 @@ class Signup extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        {/* <Header /> */}
         <SignupView />
         <Footer />
       </div>

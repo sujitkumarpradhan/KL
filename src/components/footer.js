@@ -11,7 +11,7 @@ class Footer extends Component {
                 <div style={styles.footer} className="feedback footer">
                     <footer>
                         <img style={styles.logo} alt="Amazon" src={Amazonlogo} />
-                        <b> CCS &nbsp; </b> Campaign and creative services. ©2018, Amazon.com, Inc.All Rights Reserved.
+                        <b> CCS &nbsp; </b> Campaign and creative services. ©2019, Amazon.com, Inc.All Rights Reserved.
                     </footer>
                     <span className="footerLink">
                         <a
