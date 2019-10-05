@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 350" style="enable-background:new 0 0 1024 350;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'Comfortaa-Bold';}
+	.st2{font-size:123.6244px;}
+	.st3{letter-spacing:21.45;}
+	.st4{letter-spacing:13.88;}
+	.st5{letter-spacing:12.62;}
+	.st6{letter-spacing:11.35;}
+	.st7{letter-spacing:23.97;}
+	.st8{letter-spacing:31.54;}
+	.st9{letter-spacing:6.31;}
+	.st10{letter-spacing:3.78;}
+	.st11{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#00A99D;stroke-miterlimit:10;}
+	.st14{fill:none;stroke:#39B54A;stroke-miterlimit:10;}
+	.st15{fill:none;stroke:#8CC63F;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#D9E021;stroke-miterlimit:10;}
+	.st17{fill:none;stroke:#FCEE21;stroke-miterlimit:10;}
+	.st18{fill:none;stroke:#FBB03B;stroke-miterlimit:10;}
+	.st19{fill:none;stroke:#F7931E;stroke-miterlimit:10;}
+</style>
+<text transform="matrix(0.7927 0 0 1 18.8613 226.4307)"><tspan x="0" y="0" class="st0 st1 st2 st3">K</tspan><tspan x="104.71" y="0" class="st0 st1 st2 st4">A</tspan><tspan x="206.45" y="0" class="st0 st1 st2 st5">L</tspan><tspan x="299.42" y="0" class="st0 st1 st2 st6">E</tspan><tspan x="398.31" y="0" class="st0 st1 st2 st7">I</tspan><tspan x="460.62" y="0" class="st0 st1 st2 st6">  </tspan><tspan x="557.79" y="0" class="st0 st1 st2 st8"> </tspan><tspan x="626.15" y="0" class="st0 st1 st2 st6">O</tspan><tspan x="752.37" y="0" class="st0 st1 st2 st9">S</tspan><tspan x="844.84" y="0" class="st0 st1 st2 st6">C</tspan><tspan x="953.26" y="0" class="st0 st1 st2 st9">O</tspan><tspan x="1074.53" y="0" class="st0 st1 st2 st10">P</tspan><tspan x="1156.49" y="0" class="st0 st1 st2 st6">E</tspan></text>
+<g>
+	<polygon class="st11" points="406.91,142.44 369.05,39.74 519.97,175.26 434.48,175.26 	"/>
+	<g>
+		<path class="st12" d="M378.11,64.59v221.4l123.11-110.7L378.11,64.59z M402.32,129.91l50.47,45.38l-50.47,45.38V129.91z"/>
+		<g>
+			<g>
+				<defs>
+					<path id="SVGID_1_" d="M378.11,64.59v221.4l123.11-110.7L378.11,64.59z"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+				</clipPath>
+				<use xlink:href="#SVGID_1_"  style="overflow:visible;fill:none;stroke:#29ABE2;stroke-miterlimit:10;"/>
+			</g>
+			<g>
+				<polygon class="st13" points="381.57,73.92 494.3,175.29 381.57,276.66 				"/>
+			</g>
+			<g>
+				<polygon class="st14" points="385.03,83.25 487.38,175.29 385.03,267.33 				"/>
+			</g>
+			<g>
+				<polygon class="st15" points="388.49,92.58 480.46,175.29 388.49,258 				"/>
+			</g>
+			<g>
+				<polygon class="st16" points="391.95,101.92 473.54,175.29 391.95,248.66 				"/>
+			</g>
+			<g>
+				<polygon class="st17" points="395.41,111.25 466.63,175.29 395.41,239.33 				"/>
+			</g>
+			<g>
+				<polygon class="st18" points="398.86,120.58 459.71,175.29 398.86,230 				"/>
+			</g>
+			<polygon class="st19" points="402.32,129.91 452.79,175.29 402.32,220.67 			"/>
+		</g>
+	</g>
+	<polygon class="st11" points="406.91,208.07 369.05,310.78 519.97,175.26 434.48,175.26 	"/>
+	<polygon class="st11" points="408.31,146.18 366.26,32 367.66,314.51 410.63,197.93 	"/>
+</g>
+</svg>

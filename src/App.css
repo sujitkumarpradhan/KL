@@ -1,0 +1,172 @@
+/* Fonts */
+/* @font-face {
+  font-family: "Ember";
+  src: url("https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-amazonember_rg-8a9db402d8966ae93717c348b9ab0bd08703a7a7._V2_.woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Ember";
+  src: url("https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-amazonember_rgit-a4dc98d644ff2aedd41da3da462f09ffce86eafb._V2_.woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ember";
+  src: url("https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-amazonember_bd-b605252f87b8b3df5ae206596dac0938fc5888bc._V2_.woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Ember";
+  src: url("https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-amazonember_bdit-57598ce426a612be5a1d15eee08252668fca5e7a._V2_.woff");
+  font-weight: 600;
+  font-style: italic;
+} */
+
+html{
+  background: #000000;
+  color: #fff;
+  /* font-family: "Ember"; */
+}
+body{
+  background: #000000;
+  color: #fff;
+  /* font-family: "Ember"; */
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.entryBlock {
+position: relative;
+    margin: 0 30px;
+}
+
+.winnersNameBlock{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+.winnersName{
+  font-size: 2.9em;
+  letter-spacing: 1px;
+  line-height: 42px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 0;
+}
+
+.winnerSite{
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.lineHover::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FF921E;
+  transition: width .3s;
+}
+
+.lineHover:hover::after {
+  width: 100%;
+}
+
+.imageView{
+  display: block;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: none;
+}
+
+.imageView img{
+  width: 100%;
+}
+
+.placementTypeBlock{
+
+}
+
+.placementType{
+  margin: 0 40px;
+  position: relative;
+  display: inline-block;
+  float: left;
+  letter-spacing: 1px;
+  font-size: 11px;
+}
+
+.points{
+  margin: 0 40px;
+  position: relative;
+  display: inline-block;
+  float: right;
+  font-weight: 100;
+}
+
+.points img{
+  margin: -14px;
+}
+
+.viewPageTitle{
+  margin: 0 30px 40px 30px;
+    text-align: left;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.viewPageTitleYear{
+  font-size: 14px;
+  color: #ff9400;
+  margin-bottom: 6px;
+}
+
+.viewPageTitleMonth{
+  font-size: 15px;
+}
+
+.viewPageBottomQuater{
+  margin: 50px 30px 0px 30px;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+.quaterValues{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
