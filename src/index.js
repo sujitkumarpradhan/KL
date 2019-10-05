@@ -19,6 +19,7 @@ import Review from "./pages/Review";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Validate from './pages/Validate';
+import RDashboard from './pages/RDashboard';
 
 
 const client = new ApolloClient({
@@ -40,11 +41,13 @@ ReactDOM.render(
                 <Route path="/login" component={Login} />
                 <Route path="/validate/:userAlias" component={Validate} />
                 <Route path="/signup" component={Signup} />
+                <Route path="/signup/:userAlias" component={Signup} />
                 <Route path="/discover/:path/:userAlias" component={Discover} />
-                <Route path="/entry/:id" component={SinglePage} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/profile/submit" component={Submit} />
-                <Route path="/review/:id" component={Review} />
+                <Route path="/entry/:userAlias/:id" component={SinglePage} />
+                <Route path="/profile/:userAlias" component={Profile} />
+                <Route path="/profile/submit/:userAlias" component={Submit} />
+                <Route path="/review/:userAlias/:id" component={Review} />
+                <Route path="/reviwerview/:path/:userAlias" component={RDashboard} />
                 <Route path="/" component={Login} /> 
                 <Route component={Login} />
             </Switch>

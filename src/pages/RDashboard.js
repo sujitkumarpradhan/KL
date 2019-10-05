@@ -8,21 +8,20 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { BrowserRouter } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import Footer from "../components/footer";
-import LoginView from "../components/loginView";
-
+import ReviewAllEntries from "../components/reviewAllEntries";
 import "../style/global.css";
 import Header from '../components/header';
 
-class Login extends Component {
+class RDashboard extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Header /> */}
-        <LoginView/>
+        <Header />
+        <ReviewAllEntries />
         <Footer />
       </div>
     );
   }
 }
 
-export default withApollo(withRouter(Login));
+export default withApollo(withRouter(RDashboard));
